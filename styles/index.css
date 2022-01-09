@@ -1,1 +1,68 @@
-/* No CSS *//*# sourceMappingURL=index.css.map */
+body {
+  margin: 0;
+  padding: 0;
+  background: url("../starter-code/assets/home/background-home-desktop.jpg");
+  color: white;
+}
+
+.logo {
+  background: url("../starter-code/assets/shared/logo.svg");
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  left: 54px;
+  top: -74px;
+}
+
+.navbar {
+  border: solid gold;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto minmax(600px, 1fr) 1fr;
+      grid-template-columns: 1fr auto minmax(600px, 1fr) 1fr;
+  margin-left: 35%;
+  margin-top: 40px;
+  height: 90px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar nav {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / 4;
+}
+
+.navbar nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  position: relative;
+  left: 50px;
+  top: 330px;
+  width: 380px;
+}
+/*# sourceMappingURL=index.css.map */

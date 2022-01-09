@@ -1,0 +1,54 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: url("../starter-code/assets/home/background-home-desktop.jpg");
+	color: white;
+}
+
+.logo {
+	background: url("../starter-code/assets/shared/logo.svg");
+	background-repeat: no-repeat;
+	width: 100px;
+	height: 100px;
+	position: relative;
+	left: 54px;
+	top: -74px;
+}
+.navbar {
+	border: solid gold;
+	display: grid;
+	grid-template-columns: 1fr auto minmax(600px, 1fr) 1fr;
+	margin-left: 35%;
+	margin-top: 40px;
+	height: 90px;
+	justify-content: space-evenly;
+	align-items: center;
+
+	nav {
+		grid-column: 2 / 4;
+	}
+
+	nav ul {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	a {
+		text-decoration: none;
+		color: white;
+		text-transform: uppercase;
+	}
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.container {
+	position: relative;
+	left: 50px;
+	top: 330px;
+	width: 380px;
+}
