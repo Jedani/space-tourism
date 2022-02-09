@@ -134,6 +134,10 @@ select {
   clip: rect(0, 0, 0, 0);
 }
 
+.flow > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
 /*---------colors------*/
 .bg-dark {
   background-color: rgba(12, 14, 24, 0);
@@ -243,4 +247,91 @@ select {
 /* -----------------------------------------------------------------------------------------------------*/
 /*--------------------------UTILITY CLASSES-------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------*/
+/* -----------------------------------------------------------------------------------------------------*/
+/*--------------------------COMPONENTS------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------*/
+.largebutton {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-items: centre;
+  border-radius: 50%;
+  padding: 0 2em;
+  aspect-ratio: 1;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.largebutton::after {
+  position: absolute;
+  content: "";
+  color: red;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: opacity 500ms linear, -webkit-transform 750ms ease-in-out;
+  transition: opacity 500ms linear, -webkit-transform 750ms ease-in-out;
+  transition: opacity 500ms linear, transform 750ms ease-in-out;
+  transition: opacity 500ms linear, transform 750ms ease-in-out, -webkit-transform 750ms ease-in-out;
+}
+
+.largebutton:focus::after,
+.largebutton:hover::after {
+  opacity: 1;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.primarynavigation {
+  --gap: 8rem;
+  --underline-gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.primarynavigation a {
+  text-decoration: none;
+}
+
+.primarynavigation a > span {
+  margin-right: 0.5em;
+  font-weight: 700;
+}
+
+.underline-indicators > * {
+  cursor: pointer;
+  border: 0;
+  border-bottom: 0.2rem solid rgba(255, 255, 255, 0);
+  padding: var(--underline-gap, 1rem) 0;
+}
+
+.underline-indicators > *:hover,
+.underline-indicators > *:focus {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.underline-indicators > .active,
+.underline-indicators > [aria-selected="true"] {
+  color: white;
+  border-color: white;
+}
+
+.dot-indicators > * {
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.dot-indicators > *:hover,
+.dot-indicators > *:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.dot-indicators > [aria-selected="true"] {
+  background-color: white;
+}
 /*# sourceMappingURL=index.css.map */

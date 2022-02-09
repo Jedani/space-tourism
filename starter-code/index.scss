@@ -142,6 +142,10 @@ select {
 	clip: rect(0, 0, 0, 0);
 }
 
+.flow > * + * {
+	margin-top: var(--flow-space, 1rem);
+}
+
 /*---------colors------*/
 .bg-dark {
 	background-color: hslac($clr-dark, 0);
@@ -237,92 +241,83 @@ select {
 /*--------------------------UTILITY CLASSES-------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------*/
 
-// .logo {
-// 	background: url("../starter-code/assets/shared/logo.svg");
-// 	background-repeat: no-repeat;
-// 	width: 50px;
-// 	height: 50px;
-// 	position: absolute;
-// 	left: 30px;
-// 	top: 50px;
-// }
-// .navbar {
-// 	position: relative;
-// 	top: 50px;
-// 	display: grid;
-// 	grid-template-columns: 1fr auto minmax(600px, 1fr) 1fr;
-// 	left: 35%;
-// 	height: 90px;
-// 	justify-content: space-evenly;
-// 	align-items: center;
-// 	background: hsla(0, 0%, 100%, 0.1);
-// 	backdrop-filter: blur(1.5rem);
+/* -----------------------------------------------------------------------------------------------------*/
+/*--------------------------COMPONENTS------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------*/
+.largebutton {
+	position: relative;
+	display: grid;
+	place-items: centre;
+	border-radius: 50%;
+	padding: 0 2em;
+	aspect-ratio: 1;
+	text-decoration: none;
+	z-index: 1;
+}
 
-// 	nav {
-// 		grid-column: 2 / 4;
-// 		margin-left: 60px;
-// 	}
+.largebutton::after {
+	position: absolute;
+	content: "";
+	color: red;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	opacity: 0;
+	transition: opacity 500ms linear, transform 750ms ease-in-out;
+}
 
-// 	nav ul {
-// 		display: flex;
-// 		justify-content: space-around;
-// 	}
+.largebutton:focus::after,
+.largebutton:hover::after {
+	opacity: 1;
+	transform: scale(1.5);
+}
 
-// 	a {
-// 		text-decoration: none;
-// 		color: white;
-// 		text-transform: uppercase;
-// 	}
-// }
+.primarynavigation {
+	--gap: 8rem;
+	--underline-gap: 2rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.primarynavigation a {
+	text-decoration: none;
+}
 
-// ul {
-// 	margin: 0;
-// 	padding: 0;
-// 	list-style: none;
-// }
+.primarynavigation a > span {
+	margin-right: 0.5em;
+	font-weight: 700;
+}
 
-// .container {
-// 	position: relative;
-// 	top: 50px;
-// 	height: max-content;
-// 	display: flex;
-// 	justify-content: space-around;
-// 	align-items: flex-end;
+.underline-indicators > * {
+	cursor: pointer;
+	border: 0;
+	border-bottom: 0.2rem solid hslac($clr-white, 0);
+	padding: var(--underline-gap, 1rem) 0;
+}
+.underline-indicators > *:hover,
+.underline-indicators > *:focus {
+	border-color: hslac($clr-white, 0.25);
+}
 
-// 	.desc {
-// 		width: min-content;
-// 	}
+.underline-indicators > .active,
+.underline-indicators > [aria-selected="true"] {
+	color: hslac($clr-white, 1);
+	border-color: hslac($clr-white, 1);
+}
 
-// 	h1 {
-// 		text-transform: uppercase;
-// 		font-size: 8em;
-// 		text-align: center;
-// 		margin: auto 20px;
-// 	}
+.dot-indicators > * {
+	cursor: pointer;
+	border: 0;
+	border-radius: 50%;
+	padding: 0.5em;
+	background-color: hslac($clr-white, 0.25);
+}
 
-// 	h3 {
-// 		text-transform: uppercase;
-// 		font-size: 1.5em;
-// 	}
+.dot-indicators > *:hover,
+.dot-indicators > *:focus {
+	background-color: hslac($clr-white, 0.5);
+}
 
-// 	.bot {
-// 		p {
-// 			font-size: 1.2em;
-// 		}
-// 	}
-// }
-
-// .explore {
-// 	width: 236px;
-// 	height: 236px;
-// 	border-radius: 50%;
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	background: white;
-
-// 	p {
-// 		color: black;
-// 		font-size: 2em;
-// 	}
-// }
+.dot-indicators > [aria-selected="true"] {
+	background-color: hslac($clr-white, 1);
+}
