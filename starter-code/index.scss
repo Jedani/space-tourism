@@ -272,6 +272,11 @@ select {
 	transform: scale(1.5);
 }
 
+.primary-header {
+	justify-content: space-between;
+	align-items: center;
+}
+
 .primarynavigation {
 	--gap: 8rem;
 	--underline-gap: 2rem;
