@@ -1,19 +1,71 @@
-body {
+/*--------------------------------------------------------------------------------------------------*/
+/*---------------------------DO RESETS FIRST--------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------*/
+*,
+*::before * ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
   margin: 0;
-  padding: 0;
-  background: url("../starter-code/assets/home/background-home-desktop.jpg");
-  color: white;
-  background-size: cover;
-  background-position: top;
-  overflow: hidden;
 }
 
-.line {
-  height: 3px;
-  color: gray;
-  width: 100px;
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* -------------------------------------------------------------------------------------------------------*/
+/*--------------------------IMPORTANT RESETS--------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------*/
 .logo {
   background: url("../starter-code/assets/shared/logo.svg");
   background-repeat: no-repeat;
