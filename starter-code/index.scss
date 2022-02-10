@@ -11,22 +11,21 @@
 /*--------------------------------------------------------------------------------------------------*/
 /*---------------------------CUSTOM PROPERTIES------------------------------------------------------*/
 /*--------------------------------------------------------------------------------------------------*/
-:root {
-	/*--font sizes---*/
-	--fs-900: 9.375rem;
-	--fs-800: 6.25rem;
-	--fs-700: 3.5rem;
-	--fs-600: 2rem;
-	--fs-500: 1.75rem;
-	--fs-400: 1.125rem;
-	--fs-300: 1rem;
-	--fe-200: 0.875rem;
 
-	/*---font families--*/
-	--ff-serif: "Bellefair", serif;
-	--ff-sans-cond: "Barlow Condensed", sans-serif;
-	--ff-sans-normal: "Barlow", sans-serif;
-}
+/*--font sizes---*/
+$fs-900: 9.375rem;
+$fs-800: 6.25rem;
+$fs-700: 3.5rem;
+$fs-600: 2rem;
+$fs-500: 1.75rem;
+$fs-400: 1.125rem;
+$fs-300: 1rem;
+$fs-200: 0.875rem;
+
+/*---font families--*/
+$ff-serif: "Bellefair", serif;
+$ff-sans-cond: "Barlow Condensed", sans-serif;
+$ff-sans-normal: "Barlow", sans-serif;
 
 /*--colors-----*/
 $clr-dark: hsl(230, 35%, 7%);
@@ -43,23 +42,6 @@ $clr-white: hsl(0, 0%, 100%);
 }
 
 /* Remove default margin */
-
-body {
-	min-height: 100vh;
-	text-rendering: optimizeSpeed;
-	line-height: 1.5;
-	font-family: var(--ff-sans-normal);
-	font-size: var(--fs-400);
-	color: hslac($clr-white, 0);
-	background-color: hslac($clr-dark, 0);
-	line-height: 1.5;
-	min-height: 100vh;
-
-	display: grid;
-	grid-template-rows: min-content 1fr;
-
-	overflow-x: hidden;
-}
 h1,
 h2,
 h3,
@@ -72,6 +54,22 @@ blockquote,
 dl,
 dd {
 	margin: 0;
+}
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+	font-family: $ff-sans-normal;
+	font-size: $fs-400;
+	color: $clr-white;
+	background-color: $clr-dark;
+	line-height: 1.5;
+	min-height: 100vh;
+
+	display: grid;
+	grid-template-rows: min-content 1fr;
+
+	overflow-x: hidden;
 }
 
 html:focus-within {
@@ -125,7 +123,7 @@ select {
 }
 
 .container {
-	padding-inline: 2em;
+	padding: 0 2em;
 	margin-inline: auto;
 	max-width: 80rem;
 }
@@ -148,34 +146,34 @@ select {
 
 /*---------colors------*/
 .bg-dark {
-	background-color: hslac($clr-dark, 0);
+	background-color: $clr-dark;
 }
 .bg-accent {
-	background-color: hslac($clr-accent, 0);
+	background-color: $clr-accent;
 }
 .bg-white {
-	background-color: hslac($clr-accent, 0);
+	background-color: $clr-white;
 }
 
 .text-dark {
-	background-color: hslac($clr-dark, 0);
+	color: $clr-dark;
 }
 .text-accent {
-	background-color: hslac($clr-accent, 0);
+	color: $clr-accent;
 }
 .text-white {
-	background-color: hslac($clr-white, 0);
+	color: $clr-white;
 }
 
 // typography
 .ff-serif {
-	font-family: var(--ff-serif);
+	font-family: $ff-serif;
 }
 .ff-sans-cond {
-	font-family: var(--ff-sans-cond);
+	font-family: $ff-sans-cond;
 }
 .ff-sans-normal {
-	font-family: var(--ff-sans-normal);
+	font-family: $ff-sans-normal;
 }
 
 .letter-spacing-1 {
@@ -193,28 +191,28 @@ select {
 }
 
 .fs-900 {
-	font-size: var(--fs-900);
+	font-size: $fs-900;
 }
 .fs-800 {
-	font-size: var(--fs-800);
+	font-size: $fs-800;
 }
 .fs-700 {
-	font-size: var(--fs-700);
+	font-size: $fs-700;
 }
 .fs-600 {
-	font-size: var(--fs-600);
+	font-size: $fs-600;
 }
 .fs-500 {
-	font-size: var(--fs-500);
+	font-size: $fs-500;
 }
 .fs-400 {
-	font-size: var(--fs-400);
+	font-size: $fs-400;
 }
 .fs-300 {
-	font-size: var(--fs-300);
+	font-size: $fs-300;
 }
 .fs-200 {
-	font-size: var(--fs-200);
+	font-size: $fs-200;
 }
 
 .fs-900,
@@ -246,19 +244,20 @@ select {
 /*------------------------------------------------------------------------------------------------------*/
 .largebutton {
 	position: relative;
-	display: grid;
-	place-items: centre;
+	z-index: 1;
+	display: inline-grid;
+	align-items: center;
+	justify-content: center;
 	border-radius: 50%;
 	padding: 0 2em;
-	aspect-ratio: 1;
+	width: 100px;
+	height: 100px;
 	text-decoration: none;
-	z-index: 1;
 }
 
 .largebutton::after {
 	position: absolute;
 	content: "";
-	color: red;
 	width: 100%;
 	height: 100%;
 	z-index: -1;
@@ -271,7 +270,9 @@ select {
 	opacity: 1;
 	transform: scale(1.5);
 }
-
+.logo {
+	margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+}
 .primary-header {
 	justify-content: space-between;
 	align-items: center;
@@ -306,7 +307,7 @@ select {
 
 .underline-indicators > .active,
 .underline-indicators > [aria-selected="true"] {
-	color: hslac($clr-white, 1);
+	color: hslac($clr-white, 0);
 	border-color: hslac($clr-white, 1);
 }
 

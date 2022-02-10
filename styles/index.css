@@ -3,22 +3,8 @@
 /*--------------------------------------------------------------------------------------------------*/
 /*---------------------------CUSTOM PROPERTIES------------------------------------------------------*/
 /*--------------------------------------------------------------------------------------------------*/
-:root {
-  /*--font sizes---*/
-  --fs-900: 9.375rem;
-  --fs-800: 6.25rem;
-  --fs-700: 3.5rem;
-  --fs-600: 2rem;
-  --fs-500: 1.75rem;
-  --fs-400: 1.125rem;
-  --fs-300: 1rem;
-  --fe-200: 0.875rem;
-  /*---font families--*/
-  --ff-serif: "Bellefair", serif;
-  --ff-sans-cond: "Barlow Condensed", sans-serif;
-  --ff-sans-normal: "Barlow", sans-serif;
-}
-
+/*--font sizes---*/
+/*---font families--*/
 /*--colors-----*/
 /*--------------------------------------------------------------------------------------------------*/
 /*---------------------------DO RESETS FIRST--------------------------------------------------------*/
@@ -30,24 +16,6 @@
 }
 
 /* Remove default margin */
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  font-family: var(--ff-sans-normal);
-  font-size: var(--fs-400);
-  color: rgba(255, 255, 255, 0);
-  background-color: rgba(12, 14, 24, 0);
-  line-height: 1.5;
-  min-height: 100vh;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: min-content 1fr;
-      grid-template-rows: -webkit-min-content 1fr;
-      grid-template-rows: min-content 1fr;
-  overflow-x: hidden;
-}
-
 h1,
 h2,
 h3,
@@ -60,6 +28,24 @@ blockquote,
 dl,
 dd {
   margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Barlow", sans-serif;
+  font-size: 1.125rem;
+  color: white;
+  background-color: #0c0e18;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: min-content 1fr;
+      grid-template-rows: -webkit-min-content 1fr;
+      grid-template-rows: min-content 1fr;
+  overflow-x: hidden;
 }
 
 html:focus-within {
@@ -117,7 +103,7 @@ select {
 }
 
 .container {
-  padding-inline: 2em;
+  padding: 0 2em;
   margin-inline: auto;
   max-width: 80rem;
 }
@@ -140,39 +126,39 @@ select {
 
 /*---------colors------*/
 .bg-dark {
-  background-color: rgba(12, 14, 24, 0);
+  background-color: #0c0e18;
 }
 
 .bg-accent {
-  background-color: rgba(210, 216, 249, 0);
+  background-color: #d2d8f9;
 }
 
 .bg-white {
-  background-color: rgba(210, 216, 249, 0);
+  background-color: white;
 }
 
 .text-dark {
-  background-color: rgba(12, 14, 24, 0);
+  color: #0c0e18;
 }
 
 .text-accent {
-  background-color: rgba(210, 216, 249, 0);
+  color: #d2d8f9;
 }
 
 .text-white {
-  background-color: rgba(255, 255, 255, 0);
+  color: white;
 }
 
 .ff-serif {
-  font-family: var(--ff-serif);
+  font-family: "Bellefair", serif;
 }
 
 .ff-sans-cond {
-  font-family: var(--ff-sans-cond);
+  font-family: "Barlow Condensed", sans-serif;
 }
 
 .ff-sans-normal {
-  font-family: var(--ff-sans-normal);
+  font-family: "Barlow", sans-serif;
 }
 
 .letter-spacing-1 {
@@ -192,35 +178,35 @@ select {
 }
 
 .fs-900 {
-  font-size: var(--fs-900);
+  font-size: 9.375rem;
 }
 
 .fs-800 {
-  font-size: var(--fs-800);
+  font-size: 6.25rem;
 }
 
 .fs-700 {
-  font-size: var(--fs-700);
+  font-size: 3.5rem;
 }
 
 .fs-600 {
-  font-size: var(--fs-600);
+  font-size: 2rem;
 }
 
 .fs-500 {
-  font-size: var(--fs-500);
+  font-size: 1.75rem;
 }
 
 .fs-400 {
-  font-size: var(--fs-400);
+  font-size: 1.125rem;
 }
 
 .fs-300 {
-  font-size: var(--fs-300);
+  font-size: 1rem;
 }
 
 .fs-200 {
-  font-size: var(--fs-200);
+  font-size: 0.875rem;
 }
 
 .fs-900,
@@ -252,20 +238,25 @@ select {
 /*------------------------------------------------------------------------------------------------------*/
 .largebutton {
   position: relative;
-  display: -ms-grid;
-  display: grid;
-  place-items: centre;
+  z-index: 1;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-radius: 50%;
   padding: 0 2em;
-  aspect-ratio: 1;
+  width: 100px;
+  height: 100px;
   text-decoration: none;
-  z-index: 1;
 }
 
 .largebutton::after {
   position: absolute;
   content: "";
-  color: red;
   width: 100%;
   height: 100%;
   z-index: -1;
@@ -281,6 +272,10 @@ select {
   opacity: 1;
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
+}
+
+.logo {
+  margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
 }
 
 .primary-header {
@@ -323,7 +318,7 @@ select {
 
 .underline-indicators > .active,
 .underline-indicators > [aria-selected="true"] {
-  color: white;
+  color: rgba(255, 255, 255, 0);
   border-color: white;
 }
 
