@@ -108,6 +108,15 @@ select {
   max-width: 80rem;
 }
 
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+  -ms-grid-columns: 2em (minmax(0, 40rem))[2] 2em;
+      grid-template-columns: 2em repeat(2, minmax(0, 40rem)) 2em;
+}
+
 .sr-only {
   position: absolute;
   width: 1;
@@ -220,8 +229,8 @@ select {
 .numberedtitles {
   text-transform: uppercase;
   letter-spacing: 4.72px;
-  font-size: var(--fs-500);
-  font-family: var(--ff-sans-cond);
+  font-size: 1.75rem;
+  font-family: "Barlow Condensed", sans-serif;
 }
 
 .numberedtitles span {
@@ -241,24 +250,20 @@ select {
   z-index: 1;
   display: -ms-inline-grid;
   display: inline-grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  place-items: center;
   border-radius: 50%;
   padding: 0 2em;
-  width: 100px;
-  height: 100px;
+  aspect-ratio: 0.5;
   text-decoration: none;
 }
 
 .largebutton::after {
-  position: absolute;
   content: "";
+  position: absolute;
   width: 100%;
   height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
   z-index: -1;
   opacity: 0;
   -webkit-transition: opacity 500ms linear, -webkit-transform 750ms ease-in-out;
@@ -313,7 +318,7 @@ select {
 
 .underline-indicators > *:hover,
 .underline-indicators > *:focus {
-  border-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .underline-indicators > .active,
