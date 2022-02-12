@@ -103,7 +103,7 @@ select {
 }
 
 .container {
-  padding: 0 2em;
+  padding-inline: 2em;
   margin-inline: auto;
   max-width: 80rem;
 }
@@ -115,6 +115,16 @@ select {
           column-gap: 2rem;
   -ms-grid-columns: 2em (minmax(0, 40rem))[2] 2em;
       grid-template-columns: 2em repeat(2, minmax(0, 40rem)) 2em;
+}
+
+.grid-container > *:first-child {
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+.grid-container > *:last-child {
+  -ms-grid-column: 3;
+  grid-column: 3;
 }
 
 .sr-only {
@@ -247,14 +257,14 @@ select {
 /*------------------------------------------------------------------------------------------------------*/
 .largebutton {
   position: relative;
-  z-index: 1;
   display: -ms-inline-grid;
   display: inline-grid;
-  place-items: center;
+  padding: 2em;
   border-radius: 50%;
-  padding: 0 2em;
-  aspect-ratio: 0.5;
+  aspect-ratio: 1;
   text-decoration: none;
+  place-items: center;
+  z-index: 1;
 }
 
 .largebutton::after {
@@ -262,7 +272,7 @@ select {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 50%;
   z-index: -1;
   opacity: 0;

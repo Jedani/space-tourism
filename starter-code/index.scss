@@ -123,7 +123,7 @@ select {
 }
 
 .container {
-	padding: 0 2em;
+	padding-inline: 2em;
 	margin-inline: auto;
 	max-width: 80rem;
 }
@@ -131,6 +131,12 @@ select {
 	display: grid;
 	column-gap: 2rem;
 	grid-template-columns: 2em repeat(2, minmax(0, 40rem)) 2em;
+}
+.grid-container > *:first-child {
+	grid-column: 2;
+}
+.grid-container > *:last-child {
+	grid-column: 3;
 }
 
 .sr-only {
@@ -249,13 +255,13 @@ select {
 /*------------------------------------------------------------------------------------------------------*/
 .largebutton {
 	position: relative;
-	z-index: 1;
 	display: inline-grid;
-	place-items: center;
+	padding: 2em;
 	border-radius: 50%;
-	padding: 0 2em;
-	aspect-ratio: 0.5;
+	aspect-ratio: 1;
 	text-decoration: none;
+	place-items: center;
+	z-index: 1;
 }
 
 .largebutton::after {
@@ -263,7 +269,7 @@ select {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-color: hslac($clr-white, 0.1);
+	background: hslac($clr-white, 0.15);
 	border-radius: 50%;
 	z-index: -1;
 	opacity: 0;
