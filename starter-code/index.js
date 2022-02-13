@@ -1,20 +1,20 @@
-const data = async function () {
-	const response = await fetch("data.json");
+// const data = async function () {
+// 	const response = await fetch("data.json");
 
-	if (response.status !== 200) {
-		throw new Error("can't fetch data from resource");
-	}
+// 	if (response.status !== 200) {
+// 		throw new Error("can't fetch data from resource");
+// 	}
 
-	const data = await response.json();
+// 	const data = await response.json();
 
-	return data;
-};
+// 	return data;
+// };
 
-data()
-	.then((data) => strip(data))
-	.catch((err) => err.message);
+// data()
+// 	.then((data) => strip(data))
+// 	.catch((err) => err.message);
 
-function strip(data) {
-	const pages = data.destinations;
-	console.log(pages);
-}
+// function strip(data) {
+// 	const pages = data.destinations;
+// 	console.log(pages);
+// }
