@@ -326,16 +326,65 @@ select {
 	justify-content: space-between;
 	align-items: center;
 }
-
 .primarynavigation {
-	--gap: 8rem;
 	--underline-gap: 2rem;
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	background: hslac($clr-white, 0.1);
+	backdrop-filter: blur(1rem);
+}
+
+.mobile-toggler {
+	display: none;
+}
+
+@media (max-width: 35rem) {
+	.primarynavigation {
+		--underline-gap: 0.5rem;
+		list-style: none;
+		position: fixed;
+		z-index: 1;
+		inset: 0 0 0 30%;
+		padding: 5rem 2rem;
+		margin: 0;
+		flex-direction: column;
+		z-index: 2;
+		transform: translateX(100%);
+		transition: transform 500ms ease-in-out;
+	}
+
+	.mobile-toggler {
+		display: block;
+		position: absolute;
+		right: 1rem;
+		top: 2rem;
+		z-index: 3;
+		background: transparent;
+		background-image: url(../starter-code/assets/shared/icon-hamburger.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 2rem;
+		aspect-ratio: 1;
+		border: 0;
+	}
+
+	.primarynavigation[data-visible="true"] {
+		transform: translateX(0);
+	}
+	.mobile-toggler[aria-expanded="true"] {
+		background-image: url(../starter-code/assets/shared/icon-close.svg);
+		background-repeat: no-repeat;
+	}
+	.mobile-toggler:focus-visible {
+		outline-offset: 5px;
+	}
 }
 .primarynavigation a {
 	text-decoration: none;
+}
+.primarynavigation.underline-indicators > .active {
+	border: 0;
 }
 
 .primarynavigation a > span {

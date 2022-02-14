@@ -29,6 +29,7 @@
 			href="./assets/favicon-32x32.png"
 		/>
 		<link rel="stylesheet" href="../styles/index.css" />
+		<script src="./styler.js" defer></script>
 		<script src="./index.js" defer></script>
 
 		<title>Frontend Mentor | Space tourism website</title>
@@ -38,9 +39,15 @@
 			<div>
 				<img src="./assets/shared/logo.svg" alt="logo svg" class="logo" />
 			</div>
-			<button><span class="sr-only">Menu</span></button>
+			<button class="mobile-toggler" aria-controls="primarynavigation">
+				<span class="sr-only" aria-expanded="false">Menu</span>
+			</button>
 			<nav>
-				<ul class="primarynavigation underline-indicators flex">
+				<ul
+					data-visible="false"
+					id="primarynavigation"
+					class="primarynavigation underline-indicators flex"
+				>
 					<li class="active">
 						<a
 							href="index.html"
