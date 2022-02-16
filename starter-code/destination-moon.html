@@ -1,37 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Barlow&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap"
+			rel="stylesheet"
+		/>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Space tourism website</title>
-</head>
-<body>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="../styles/index.css" />
+		<script src="./styler.js" defer></script>
+		<script src="./index.js" defer></script>
 
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
+		<title>Frontend Mentor | Space tourism website</title>
+	</head>
+	<body class="destination">
+		<header class="primary-header flex">
+			<div>
+				<img src="./assets/shared/logo.svg" alt="logo svg" class="logo" />
+			</div>
+			<button class="mobile-toggler" aria-controls="primarynavigation">
+				<span class="sr-only" aria-expanded="false">Menu</span>
+			</button>
+			<nav>
+				<ul
+					data-visible="false"
+					id="primarynavigation"
+					class="primarynavigation underline-indicators flex"
+				>
+					<li class="active">
+						<a
+							href="index.html"
+							class="ff-sans-cond uppercase text-white letter-spacing-2"
+							><span>00</span> Home</a
+						>
+					</li>
+					<li>
+						<a
+							href="destination-moon.html"
+							class="ff-sans-cond uppercase text-white letter-spacing-2"
+							><span>01</span>Destination</a
+						>
+					</li>
+					<li>
+						<a
+							href="crew-commander.html"
+							class="ff-sans-cond uppercase text-white letter-spacing-2"
+							><span>02</span>Crew</a
+						>
+					</li>
+					<li>
+						<a
+							href="technology-vehicle.html"
+							class="ff-sans-cond uppercase text-white letter-spacing-2"
+							><span>03</span>Technology</a
+						>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
-  01 Pick your destination
-
-  Moon
-  Mars
-  Europa
-  Titan
-
-  Moon
-
-  See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
-  regain perspective and come back refreshed. While you’re there, take in some history 
-  by visiting the Luna 2 and Apollo 11 landing sites.
-
-  Avg. distance
-  384,400 km
-
-  Est. travel time
-  3 days
-</body>
+		<main id="main" class="grid-container grid-container--destination flow">
+			<h1 class="numberedtitles">
+				<span aria-hidden="true">01</span> Pick your destination
+			</h1>
+			<picture>
+				<img
+					src="../starter-code/assets/destination/image-moon.png"
+					alt="the moon"
+				/>
+			</picture>
+			<div
+				class="tab-list underline-indicators flex"
+				role="tablist"
+				aria-label="destination list"
+			>
+				<button
+					aria-selected="true"
+					role="tab"
+					aria-controls="moon-tab"
+					class="uppercase bg-dark ff-sans-cond text-accent letter-spacing-2"
+					tabindex="0"
+					data-image="moon-image"
+				>
+					Moon
+				</button>
+				<button
+					aria-selected="false"
+					role="tab"
+					aria-controls="mars-tab"
+					class="uppercase bg-dark ff-sans-cond text-accent letter-spacing-2"
+					tabindex="-1"
+					data-image="mars-image"
+				>
+					Mars
+				</button>
+				<button
+					aria-selected="false"
+					role="tab"
+					aria-controls="europa-tab"
+					class="uppercase bg-dark ff-sans-cond text-accent letter-spacing-2"
+					tabindex="-1"
+					data-image="europa-image"
+				>
+					Europa
+				</button>
+				<button
+					aria-selected="false"
+					role="tab"
+					aria-controls="titan-tab"
+					class="uppercase bg-dark ff-sans-cond text-accent letter-spacing-2"
+					tabindex="-1"
+					data-image="titan-image"
+				>
+					Titan
+				</button>
+			</div>
+			<article class="destination-info">
+				<h2 class="uppercase fs-800 ff-serif">Moon</h2>
+				<p>
+					See our planet as you’ve never seen it before. A perfect relaxing trip
+					away to help regain perspective and come back refreshed. While you’re
+					there, take in some history by visiting the Luna 2 and Apollo 11
+					landing sites.
+				</p>
+				<div class="destination-meta flex">
+					<div>
+						<h3 class="text-accent fs-200 uppercase">Avg. distance</h3>
+						<p class="uppercase fs-500 ff-serif">384,400 km</p>
+					</div>
+					<div>
+						<h3 class="text-accent fs-200 uppercase">Est. travel time</h3>
+						<p class="uppercase fs-500 ff-serif">3 days</p>
+					</div>
+				</div>
+			</article>
+		</main>
+	</body>
 </html>
