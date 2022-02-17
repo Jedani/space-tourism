@@ -453,57 +453,102 @@ select {
 		max-width: 50ch;
 	}
 
-	// .destination-meta {
-	// 	flex-direction: column;
-	// 	border-top: 2px solid hslac($clr-white, 0.1);
-	// 	padding-top: 2.5rem;
-	// 	margin-top: 2.5rem;
-	// }
+	.numberedtitles {
+		grid-area: title;
+	}
 
 	@media (min-width: 45em) {
 		text-align: left;
-		display: grid;
 		column-gap: var(--column-gap, 2rem);
 		grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(
 				2rem,
 				1fr
 			);
+	}
+}
 
+.grid-container--home {
+	@media (min-width: 45em) {
 		> *:first-child {
 			grid-column: 2;
 		}
 		> *:last-child {
 			grid-column: 3;
 		}
+		padding-bottom: unquote("max(6rem, 20vh)");
+		align-items: end;
+	}
+}
 
-		.grid-container--home {
-			padding-bottom: unquote("max(6rem, 20vh)");
-			align-items: end;
+.grid-container--destination {
+	--flow-space: 2rem;
+	grid-template-areas:
+		"title"
+		"image"
+		"tabs"
+		"content";
+
+	img {
+		grid-area: image;
+		max-width: 60%;
+	}
+
+	.tab-list {
+		grid-area: tabs;
+	}
+
+	.destination-info {
+		grid-area: content;
+	}
+
+	.destination-meta {
+		flex-direction: column;
+		border-top: 2px solid hslac($clr-white, 0.1);
+		padding-top: 2.5rem;
+		margin-top: 2.5rem;
+
+		p {
+			font-size: 1.75rem;
+		}
+	}
+
+	@media (min-width: 35em) {
+		.numberedtitles {
+			justify-self: start;
+			margin-top: 2rem;
 		}
 
-		// .numberedtitles {
-		// 	grid-area: title;
-		// }
+		.destination-meta {
+			flex-direction: row;
+			justify-content: space-evenly;
+		}
+	}
 
-		// .grid-container--destination {
-		// 	img {
-		// 		grid-area: image;
-		// 		max-width: 60%;
-		// 	}
+	@media (min-width: 45em) {
+		justify-items: start;
+		align-content: start;
 
-		// 	.destination-info {
-		// 		grid-area: content;
-		// 	}
-		// 	.tab-list {
-		// 		grid-area: tabs;
-		// 	}
-		// 	grid-template-areas:
-		// 		"title"
-		// 		"image"
-		// 		"tabs"
-		// 		"content";
-		// }
-		// }
+		grid-template-areas:
+			". title title ."
+			". image tabs ."
+			". image content .";
+		.numberedtitles {
+			grid-area: title;
+		}
+		picture {
+			grid-area: image;
+		}
+		.tab-list {
+			grid-area: tabs;
+		}
+		.destination-info {
+			grid-area: content;
+		}
+
+		.destination-meta {
+			--gap: 6rem;
+			justify-content: start;
+		}
 	}
 }
 
