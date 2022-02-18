@@ -338,7 +338,7 @@ select {
 }
 
 .primary-header .primarynavigation {
-  --gap: clamp(1.5rem, 5vw, 3.5rem);
+  --gap: clamp(2rem, 5vw, 3.5rem);
   --underline-gap: 2rem;
   list-style: none;
   padding: 0;
@@ -402,6 +402,9 @@ select {
   .primary-header .primarynavigation {
     margin-block: 3rem;
   }
+  .primary-header .primarynavigation > :first-child {
+    width: 100px;
+  }
 }
 
 .underline-indicators > * {
@@ -440,6 +443,26 @@ select {
 }
 
 .dot-indicators > [aria-selected="true"] {
+  background-color: white;
+}
+
+.number-indicators * {
+  cursor: pointer;
+  background: transparent;
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  font-size: 1.75rem;
+  place-items: center;
+}
+
+.number-indicators button {
+  border-color: white;
+  border-width: thin;
+}
+
+.number-indicators[aria-selected~="true"] {
+  color: #0c0e18;
   background-color: white;
 }
 
@@ -587,6 +610,12 @@ select {
       grid-template-areas: "title" "image" "tabs" "content";
 }
 
+.grid-container--crew .numberedtitles {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+}
+
 .grid-container--crew picture {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
@@ -620,9 +649,26 @@ select {
         grid-template-areas: "title" "content" "tabs" "image";
   }
   .grid-container--crew .numberedtitles {
-    -ms-grid-column-align: start;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: title;
         justify-self: start;
     margin-top: 2rem;
+  }
+  .grid-container--crew .dot-indicators {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: tabs;
+  }
+  .grid-container--crew picture {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: image;
+  }
+  .grid-container--crew .crew-details {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: content;
   }
 }
 
@@ -632,13 +678,107 @@ select {
   }
   .grid-container--crew .dot-indicators {
     -ms-grid-row: 3;
-    -ms-grid-column: 2;
+    -ms-grid-column: 1;
     grid-area: tabs;
-    -ms-grid-column-align: start;
         justify-self: start;
+  }
+  .grid-container--crew .numberedtitles {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: title;
+  }
+  .grid-container--crew picture {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: image;
   }
   .grid-container--crew picture img {
     max-width: 90%;
+  }
+  .grid-container--crew .crew-details {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: content;
+  }
+}
+
+.grid-container--technology {
+  --flow-space: 2rem;
+      grid-template-areas: "title" "image" "tabs" "content";
+}
+
+.grid-container--technology .numberedtitles {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+}
+
+.grid-container--technology picture {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: image;
+}
+
+.grid-container--technology picture img {
+  width: 100%;
+}
+
+.grid-container--technology .number-indicators {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: tabs;
+}
+
+.grid-container--technology .technology-info {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: content;
+}
+
+@media (min-width: 35em) {
+  .grid-container--technology .numberedtitles {
+    -ms-grid-column-align: start;
+        justify-self: start;
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 45em) {
+  .grid-container--technology {
+    --flow-space: 2rem;
+        grid-template-areas: ". . title  ." ". tabs content image";
+    -ms-grid-columns: max-content;
+        grid-template-columns: -webkit-max-content;
+        grid-template-columns: max-content;
+    -webkit-box-align: middle;
+        -ms-flex-align: middle;
+            align-items: middle;
+  }
+  .grid-container--technology .numberedtitles {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: title;
+  }
+  .grid-container--technology .number-indicators {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: tabs;
+    -ms-grid-column-align: right;
+        justify-self: right;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .grid-container--technology .technology-info {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: content;
+  }
+  .grid-container--technology picture {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+    grid-area: image;
   }
 }
 
@@ -705,7 +845,7 @@ body {
 
 /*technology*/
 .technology {
-  background-image: url("../starter-code/assets/home/background-technology-mobile.jpg");
+  background-image: url("../starter-code/assets/technology/background-technology-mobile.jpg");
 }
 
 @media (min-width: 35em) {

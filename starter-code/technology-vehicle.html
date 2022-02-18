@@ -34,7 +34,7 @@
 
 		<title>Frontend Mentor | Space tourism website</title>
 	</head>
-	<body class="home">
+	<body class="technology">
 		<header class="primary-header flex">
 			<div>
 				<img src="./assets/shared/logo.svg" alt="logo svg" class="logo" />
@@ -79,10 +79,65 @@
 				</ul>
 			</nav>
 		</header>
-		03 Space launch 101 1 2 3 The terminology... Launch vehicle A launch vehicle
-		or carrier rocket is a rocket-propelled vehicle used to carry a payload from
-		Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X
-		carrier rocket is the most powerful in operation. Standing 150 metres tall,
-		it's quite an awe-inspiring sight on the launch pad!
+
+		<main id="main" class="grid-container grid-container--technology flow">
+			<h1 class="numberedtitles">
+				<span aria-hidden="true">03</span>Space launch 101
+			</h1>
+			<picture>
+				<img
+					src="../starter-code/assets/technology/image-launch-vehicle-portrait.jpg"
+					alt="Launch"
+				/>
+			</picture>
+			<div class="number-indicators flex">
+				<button
+					aria-selected="true"
+					role="tab"
+					aria-controls="moon-tab"
+					class="uppercase bg-dark ff-serif text-white"
+					tabindex="0"
+				>
+					1
+				</button>
+				<button
+					aria-selected="false"
+					role="tab"
+					aria-controls="moon-tab"
+					class="uppercase bg-dark ff-serif text-white"
+					tabindex="-1"
+				>
+					2
+				</button>
+				<button
+					aria-selected="false"
+					role="tab"
+					aria-controls="moon-tab"
+					class="uppercase bg-dark ff-serif text-white"
+					tabindex="-1"
+				>
+					3
+				</button>
+			</div>
+			<article class="technology-info flow">
+				<header class="flow flow--space-small">
+					<h1
+						class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1"
+					>
+						The terminology...
+						<span class="d-block uppercase text-white fs-600 ff-serif"
+							>Launch vehicle</span
+						>
+					</h1>
+				</header>
+				<p>
+					A launch vehicle or carrier rocket is a rocket-propelled vehicle used
+					to carry a payload from Earth's surface to space, usually to Earth
+					orbit or beyond. Our WEB-X carrier rocket is the most powerful in
+					operation. Standing 150 metres tall, it's quite an awe-inspiring sight
+					on the launch pad!
+				</p>
+			</article>
+		</main>
 	</body>
 </html>

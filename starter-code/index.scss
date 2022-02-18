@@ -346,7 +346,7 @@ select {
 	}
 
 	.primarynavigation {
-		--gap: clamp(1.5rem, 5vw, 3.5rem);
+		--gap: clamp(2rem, 5vw, 3.5rem);
 		--underline-gap: 2rem;
 		list-style: none;
 		padding: 0;
@@ -395,6 +395,9 @@ select {
 		}
 
 		@media (min-width: 45em) {
+			> :first-child {
+				width: 100px;
+			}
 			margin-block: 3rem;
 		}
 	}
@@ -440,6 +443,28 @@ select {
 
 .dot-indicators > [aria-selected="true"] {
 	background-color: hslac($clr-white, 1);
+}
+
+.number-indicators {
+	* {
+		cursor: pointer;
+		background: transparent;
+		border-radius: 50%;
+		width: 2.5em;
+		height: 2.5em;
+		font-size: $fs-500;
+		place-items: center;
+	}
+
+	button {
+		border-color: $clr-white;
+		border-width: thin;
+	}
+
+	&[aria-selected~="true"] {
+		color: hslac($clr-dark, 1);
+		background-color: hslac($clr-white, 1);
+	}
 }
 
 .grid-container {
@@ -563,6 +588,10 @@ select {
 		"tabs"
 		"content";
 
+	.numberedtitles {
+		grid-area: title;
+	}
+
 	picture {
 		grid-area: image;
 		img {
@@ -585,10 +614,21 @@ select {
 	@media (min-width: 35em) {
 		padding-bottom: 0;
 		.numberedtitles {
+			grid-area: title;
 			justify-self: start;
 			margin-top: 2rem;
 		}
 		grid-template-areas: "title" "content" "tabs" "image";
+		.dot-indicators {
+			grid-area: tabs;
+		}
+
+		picture {
+			grid-area: image;
+		}
+		.crew-details {
+			grid-area: content;
+		}
 	}
 
 	@media (min-width: 45em) {
@@ -597,11 +637,78 @@ select {
 			grid-area: tabs;
 			justify-self: start;
 		}
+		.numberedtitles {
+			grid-area: title;
+		}
 
 		picture {
+			grid-area: image;
 			img {
 				max-width: 90%;
 			}
+		}
+		.crew-details {
+			grid-area: content;
+		}
+	}
+}
+
+.grid-container--technology {
+	--flow-space: 2rem;
+	grid-template-areas:
+		"title"
+		"image"
+		"tabs"
+		"content";
+
+	.numberedtitles {
+		grid-area: title;
+	}
+
+	picture {
+		grid-area: image;
+		img {
+			width: 100%;
+		}
+	}
+	.number-indicators {
+		grid-area: tabs;
+	}
+
+	.technology-info {
+		grid-area: content;
+	}
+
+	@media (min-width: 35em) {
+		.numberedtitles {
+			justify-self: start;
+			margin-top: 2rem;
+		}
+	}
+
+	@media (min-width: 45em) {
+		--flow-space: 2rem;
+		grid-template-areas:
+			". . title  ."
+			". tabs content image";
+		grid-template-columns: max-content;
+		align-items: middle;
+		.numberedtitles {
+			grid-area: title;
+		}
+
+		.number-indicators {
+			grid-area: tabs;
+			justify-self: right;
+			flex-direction: column;
+		}
+
+		.technology-info {
+			grid-area: content;
+		}
+
+		picture {
+			grid-area: image;
 		}
 	}
 }
@@ -656,7 +763,7 @@ body {
 
 /*technology*/
 .technology {
-	background-image: url("../starter-code/assets/home/background-technology-mobile.jpg");
+	background-image: url("../starter-code/assets/technology/background-technology-mobile.jpg");
 
 	@media (min-width: 35em) {
 		background-position: center center;
