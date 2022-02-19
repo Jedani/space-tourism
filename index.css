@@ -490,8 +490,8 @@ select {
     text-align: left;
     -webkit-column-gap: var(--column-gap, 2rem);
             column-gap: var(--column-gap, 2rem);
-    -ms-grid-columns: minmax(2rem, 1fr) (minmax(0, 40rem))[2] minmax(2rem, 1fr);
-        grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
+    -ms-grid-columns: minmax(1rem, 1fr) (minmax(0, 40rem))[2] minmax(1rem, 1fr);
+        grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(1rem, 1fr);
   }
 }
 
@@ -719,10 +719,6 @@ select {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: image;
-}
-
-.grid-container--technology picture img {
-  src: url("./assets/technology/image-launch-vehicle-portrait.jpg");
 }
 
 .grid-container--technology .number-indicators {

@@ -483,8 +483,8 @@ select {
 	@media (min-width: 45em) {
 		text-align: left;
 		column-gap: var(--column-gap, 2rem);
-		grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(
-				2rem,
+		grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(
+				1rem,
 				1fr
 			);
 	}
@@ -666,9 +666,6 @@ select {
 
 	picture {
 		grid-area: image;
-		img {
-			src: url("./assets/technology/image-launch-vehicle-portrait.jpg");
-		}
 	}
 	.number-indicators {
 		grid-area: tabs;
@@ -708,8 +705,6 @@ select {
 
 		picture {
 			grid-area: image;
-			img {
-			}
 		}
 	}
 }
