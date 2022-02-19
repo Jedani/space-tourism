@@ -514,6 +514,7 @@ select {
 	img {
 		grid-area: image;
 		max-width: 60%;
+		align-self: start;
 	}
 
 	.tab-list {
