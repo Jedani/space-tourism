@@ -447,7 +447,6 @@ select {
 .number-indicators {
 	* {
 		cursor: pointer;
-		background: transparent;
 		border-radius: 50%;
 		width: 2.5em;
 		height: 2.5em;
@@ -460,7 +459,7 @@ select {
 		border-width: thin;
 	}
 
-	&[aria-selected~="true"] {
+	[aria-selected~="true"] {
 		color: hslac($clr-dark, 1);
 		background-color: hslac($clr-white, 1);
 	}
@@ -667,7 +666,7 @@ select {
 	picture {
 		grid-area: image;
 		img {
-			width: 100%;
+			src: url("./assets/technology/image-launch-vehicle-portrait.jpg");
 		}
 	}
 	.number-indicators {
@@ -708,6 +707,8 @@ select {
 
 		picture {
 			grid-area: image;
+			img {
+			}
 		}
 	}
 }
