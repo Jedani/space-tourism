@@ -7,7 +7,7 @@ const data = async function () {
 
 	const data = await response.json();
 
-	return data;
+	return data.destinations;
 };
 
 data()
@@ -15,7 +15,7 @@ data()
 	.catch((err) => err.message);
 
 function strip(data) {
-	let pages = data.destinations;
+	let pages = data;
 
 	const tablist = document.querySelector('[role="tablist"]');
 	const tabs = document.querySelectorAll('[role="tab"]');
@@ -51,6 +51,14 @@ function strip(data) {
 		tab.addEventListener("click", (e) => {
 			const targetTab = e.target;
 			const select = targetTab.getAttribute("aria-controls");
+
+			let tabContainer = targetTab.parentNode;
+
+			tabContainer
+				.querySelector('[aria-selected="true"]')
+				.setAttribute("aria-selected", false);
+
+			targetTab.setAttribute("aria-selected", true);
 
 			const main = document.getElementById("main");
 			const children = Array.from(main.children);
