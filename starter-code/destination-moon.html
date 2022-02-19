@@ -28,9 +28,9 @@
 			sizes="32x32"
 			href="./assets/favicon-32x32.png"
 		/>
-		<link rel="stylesheet" href="../styles/index.css" />
+		<link rel="stylesheet" href="index.css" />
 		<script src="./styler.js" defer></script>
-		<script src="./index.js" defer></script>
+		<script src="./destinations.js" defer></script>
 
 		<title>Frontend Mentor | Space tourism website</title>
 	</head>
@@ -86,13 +86,10 @@
 			</h1>
 			<picture>
 				<source
-					srcset="../starter-code/assets/destination/image-moon.webp"
+					srcset="./assets/destination/image-moon.webp"
 					type="image/webp"
 				/>
-				<img
-					src="../starter-code/assets/destination/image-moon.png"
-					alt="the moon"
-				/>
+				<img src="./assets/destination/image-moon.png" alt="the moon" />
 			</picture>
 			<div
 				class="tab-list underline-indicators flex"
@@ -103,7 +100,7 @@
 					aria-selected="true"
 					role="tab"
 					aria-controls="moon-tab"
-					class="uppercase bg-dark ff-sans-cond text-accent letter-spacing-2"
+					class="active uppercase bg-dark ff-sans-cond text-accent letter-spacing-2"
 					tabindex="0"
 					data-image="moon-image"
 				>
@@ -142,7 +139,7 @@
 			</div>
 			<article class="destination-info flow">
 				<h2 class="uppercase fs-800 ff-serif">Moon</h2>
-				<p>
+				<p id="change">
 					See our planet as you’ve never seen it before. A perfect relaxing trip
 					away to help regain perspective and come back refreshed. While you’re
 					there, take in some history by visiting the Luna 2 and Apollo 11
